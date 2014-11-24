@@ -33,7 +33,6 @@ variables = [
     ]
 
 @calculator.route('/api/v1.0/variables', methods=['GET'])
-@auth.login_required
 def getvariables():
     return jsonify({'variables': map(makepublicvariable,variables)})
 
@@ -58,6 +57,7 @@ def getvariable(variableid):
     else:
         return jsonify({'variable' : results[0]})
 
+@auth.login_required
 @calculator.route('/api/v1.0/variables', methods=['POST'])
 def createvariable():
     xs = []
