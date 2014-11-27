@@ -1,0 +1,12 @@
+.playerbutton {
+    border: 0px;
+    width: 500px;
+    height: 500px;
+    background: url(player2.png);
+    background-size: 1774px auto;
+    background-position: 0% 0%
+    }
+
+.playerbutton.pause{}
+.playerbutton.play{background-position: 50% 0%}
+.playerbutton.stop{background-position: 100% 0}

@@ -1,0 +1,50 @@
+<html>
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/mobile.css">
+
+
+<script src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+function play()
+{
+
+    var request;
+    request = $.ajax({
+        url:  "/cgi-bin/ajaxpost.py",
+        type: "POST",
+        data: "hej=nej",
+        success: successHandler,
+        error: errorHandler,
+        async:   false
+    });
+}
+
+function errorHandler(jqXHR, textStatus, errorThrown)
+{
+    alert(JSON.stringify(jqXHR) + ' ' + textStatus +'  '+errorThrown);
+    document.write("hej")
+}
+
+function successHandler(data)
+{
+    alert("success")
+}
+
+</script>
+
+
+<script type="text/javascript">
+    function hej()
+    {
+        alert("hej");
+    }
+</script>
+
+
+<body>
+<center>
+<form name="playerform" onsubmit="javascript:play()">
+<input type="submit" value="" class='playerbutton play'>
+</form>
+</body>
+</html>
