@@ -1,14 +1,13 @@
-from flask import Flask, abort
-
+from flask import abort, render_template
 from flask.ext import restful
-
 from flask.ext.restful import fields, marshal_with, reqparse
+
+from app import app
 
 from subprocess import *
 
 from Backend import *
 
-app = Flask(__name__)
 api = restful.Api(app)
 
 
@@ -54,10 +53,6 @@ class Playlist(restful.Resource):
     def get(self):
         return {'playlist' : client.getplaylist()}
 
-class Playlist(restful.Resource):
-    def get(self):
-        return {'status' : client.getplaylist()}
-
 class PlaylistSong(restful.Resource):
     def get(self,songid):
         return {'song' : client.getplaylistsong(songid)}
@@ -76,6 +71,8 @@ class Player(restful.Resource):
         args = post_parser.parse_args()
         client.player(args.command)
         return {'state' : args.command}
+    def get(self):
+        return {'state' :client.getplayerstatus()}
 
 api.add_resource(Status, basepath + 'status')
 api.add_resource(Version, basepath + 'version')
@@ -83,6 +80,11 @@ api.add_resource(Currentsong, basepath + 'currentsong')
 api.add_resource(Playlist, basepath + 'playlist')
 api.add_resource(PlaylistSong, basepath + 'playlist/<int:songid>')
 api.add_resource(Player, basepath + 'player')
+
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,80 @@
+<html>
+<link rel="stylesheet" href="/static/css/button.css">
+<link rel="stylesheet" href="/static/css/mobile.css">
+
+
+<script src="/static/jquery-2.1.1.js"></script>
+
+<body>
+<center>
+<form name="playerform" onsubmit="javascript:play()">
+<input id="playerButton" type="submit" value="">
+</form>
+
+<script type="text/javascript">
+
+var statedate = "unknown";
+
+
+function invertstate(state)
+{
+    var result = state;
+    switch(state)
+    {
+        case "pause" : result = "play"; break;
+        case "play"  : result = "pause"; break;
+        case "stop"  : result = "stop"; break;
+
+    }
+    return result;
+}
+
+function getPlayerStatusButton(data)
+{
+    statedata = data;
+    return "playerbutton " + invertstate(data.state);
+}
+
+function play()
+{
+    var data = "command=" + invertstate(statedata.state);
+    var request;
+    request = $.ajax({
+        url:  "/api/v1/player",
+        type: "POST",
+        data: data,
+        success: successHandler,
+        error: errorHandler,
+        async:   false
+    });
+}
+
+function errorHandler(jqXHR, textStatus, errorThrown)
+{
+    alert(JSON.stringify(jqXHR) + ' ' + textStatus +'  '+errorThrown);
+
+}
+
+function successHandler(data)
+{
+    document.getElementById("playerButton").className = getPlayerStatusButton(data);
+}
+
+function getstatus()
+{
+    var request;
+    request = $.ajax({
+        url:  "/api/v1/player",
+        type: "GET",
+        success: successHandler,
+        error: errorHandler,
+        async:   false
+    });
+}
+
+getstatus();
+
+</script>
+
+</body>
+</html>
