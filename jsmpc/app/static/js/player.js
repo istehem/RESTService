@@ -8,7 +8,7 @@ function invertstate(state)
     {
         case "pause" : result = "play"; break;
         case "play"  : result = "pause"; break;
-        case "stop"  : result = "stop"; break;
+        case "stop"  : result = "play"; break;
 
     }
     return result;
