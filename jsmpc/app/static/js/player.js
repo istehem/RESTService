@@ -1,18 +1,3 @@
-<html>
-<link rel="stylesheet" href="/static/css/button.css">
-<link rel="stylesheet" href="/static/css/mobile.css">
-
-
-<script src="/static/jquery-2.1.1.js"></script>
-
-<body>
-<center>
-<form name="playerform" onsubmit="javascript:play()">
-<input id="playerButton" type="submit" value="">
-</form>
-
-<script type="text/javascript">
-
 var statedate = "unknown";
 
 
@@ -72,9 +57,3 @@ function getstatus()
     });
 }
 
-getstatus();
-
-</script>
-
-</body>
-</html>

@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mpdrestapi
+Version: 0.0.1
+Summary: A Rest API for MPD (Music Player Deamon)
+Home-page: UNKNOWN
+Author: Oskar Ingemarsson
+Author-email: UNKNOWN
+License: BSD3
+Description: UNKNOWN
+Keywords: MPD REST JSON
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
