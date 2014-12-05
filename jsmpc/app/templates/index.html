@@ -1,21 +1,29 @@
 <html>
 <link rel="stylesheet" href="/static/css/button.css">
-<link rel="stylesheet" href="/static/css/mobile.css">
+<link rel="stylesheet" href="/static/css/songinfo.css">
 
 
 <script src="/static/js/jquery-2.1.1.js"></script>
 <script src="/static/js/player.js"></script>
+<script src="/static/js/currentsonginfo.js"></script>
+<script src="/static/js/controler.js"></script>
+<script src="/static/js/globals.js"></script>
+<script src="/static/js/httpmethods.js"></script>
+<script src="/static/js/run.js"></script>
 
 
 <body>
 <center>
+<div id="songtitle" class="textstyle songtitle"></div>
+<pre><code>
 <form name="playerform" onsubmit="javascript:play()">
 <input id="playerButton" type="submit" value="">
 </form>
 
 <script type="text/javascript">
-getstatus()
+run()
 </script>
+
 
 </body>
 </html>

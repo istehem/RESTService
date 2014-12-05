@@ -1,6 +1,3 @@
-var statedate = "unknown";
-
-
 function invertstate(state)
 {
     var result = state;
@@ -20,40 +17,8 @@ function getPlayerStatusButton(data)
     return "playerbutton " + invertstate(data.state);
 }
 
-function play()
-{
-    var data = "command=" + invertstate(statedata.state);
-    var request;
-    request = $.ajax({
-        url:  "/api/v1/player",
-        type: "POST",
-        data: data,
-        success: successHandler,
-        error: errorHandler,
-        async:   false
-    });
-}
 
-function errorHandler(jqXHR, textStatus, errorThrown)
-{
-    alert(JSON.stringify(jqXHR) + ' ' + textStatus +'  '+errorThrown);
-
-}
-
-function successHandler(data)
+function handlesetplayerbutton(data)
 {
     document.getElementById("playerButton").className = getPlayerStatusButton(data);
 }
-
-function getstatus()
-{
-    var request;
-    request = $.ajax({
-        url:  "/api/v1/player",
-        type: "GET",
-        success: successHandler,
-        error: errorHandler,
-        async:   false
-    });
-}
-

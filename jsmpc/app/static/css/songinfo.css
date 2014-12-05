@@ -1,0 +1,14 @@
+.textstyle {
+    font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.75em;
+    letter-spacing: .2em;
+    line-height: 1.1em;
+    margin:0px;
+    text-align: center;
+    text-transform: uppercase;
+    }
+
+.textstyle.artist{font-size: 1.50em;}
+.textstyle.albumtitle{font-size: 1.50em;}
+.textstyle.songtitle{font-size: 1.75em;}
