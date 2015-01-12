@@ -32,6 +32,14 @@ class PlaylistSong(restful.Resource):
     def get(self,songid):
         return {'song' : client.getplaylistsong(songid)}
 
+class Next(restful.Resource):
+    def post(self):
+        return {'song' : client.next()}
+
+class Previous(restful.Resource):
+    def post(self):
+        return {'song' : client.previous()}
+
 class Player(restful.Resource):
     def post(self):
         def playercommand(command):

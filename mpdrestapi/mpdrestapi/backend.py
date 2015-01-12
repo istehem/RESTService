@@ -34,3 +34,11 @@ class Client:
     def getplayerstatus(self):
         return self.client.status()["state"]
 
+
+    def previous(self):
+        self.client.previous()
+        return self.getcurrentsong()
+
+    def next(self):
+        self.client.next()
+        return self.getcurrentsong()

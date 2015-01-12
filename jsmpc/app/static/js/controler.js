@@ -3,7 +3,7 @@ function postSuccessHandler(data)
     var command = "" + Object.keys(data);
     switch(command)
     {
-        case "state" : setplayerbutton(data); break;
+        case "state" : handlesetplayerbutton(data); break;
     }
 }
 
@@ -28,6 +28,16 @@ function play()
 {
     var data = "command=" + invertstate(statedata.state);
     post("/api/v1/player",data);
+}
+
+function next()
+{
+    post("/api/v1/next","");
+}
+
+function previous()
+{
+    post("/api/v1/previous","");
 }
 
 function setcurrentsong()

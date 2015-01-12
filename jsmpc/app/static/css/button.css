@@ -1,12 +1,68 @@
-.playerbutton {
+.playercontroler
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.playercontroler.playerbutton {
     border: 0px;
     width: 500px;
     height: 500px;
     background: url(../img/player2.png);
     background-size: 1774px auto;
-    background-position: 0% 0%
+    position: relative;
     }
+
+.playercontroler.arrow {
+    border: 0px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/arrow-next.png);
+}
 
 .playerbutton.pause{}
 .playerbutton.play{background-position: 50% 0%}
-.playerbutton.stop{background-position: 100% 0}
+.playerbutton.stop{background-position: 100% 0%}
+
+.playercontroler.next
+{
+    border: 0px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/arrow-next.png);
+    margin-left: auto;
+    position: relative;
+    margin-right: auto;
+    margin-top:  auto;
+}
+.playercontroler.previous
+{
+    border: 0px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/arrow-next.png);
+    transform: scale(-1, 1);
+    position: relative;
+    margin-left: auto;
+    margin-top:  auto;
+    margin-right: auto
+}
+.arrow.next
+{
+    margin-left: auto;
+    position: relative;
+    margin-right: auto;
+    margin-top:  auto;
+}
+.arrow.previous
+{
+    transform: scale(-1, 1);
+    position: relative;
+    margin-left: auto;
+    margin-top:  auto;
+    margin-right: auto
+}

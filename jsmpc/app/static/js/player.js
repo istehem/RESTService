@@ -14,11 +14,11 @@ function invertstate(state)
 function getPlayerStatusButton(data)
 {
     statedata = data;
-    return "playerbutton " + invertstate(data.state);
+    return "playercontroler playerbutton " + invertstate(data.state);
 }
 
 
 function handlesetplayerbutton(data)
 {
-    document.getElementById("playerButton").className = getPlayerStatusButton(data);
+    document.getElementById("playerbutton").className = getPlayerStatusButton(data);
 }

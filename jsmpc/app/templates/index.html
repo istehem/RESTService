@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="/static/css/button.css">
 <link rel="stylesheet" href="/static/css/songinfo.css">
 
-
 <script src="/static/js/jquery-2.1.1.js"></script>
 <script src="/static/js/player.js"></script>
 <script src="/static/js/currentsonginfo.js"></script>
@@ -11,19 +10,24 @@
 <script src="/static/js/httpmethods.js"></script>
 <script src="/static/js/run.js"></script>
 
-
 <body>
-<center>
+<form name="buttonnextform" onsubmit="javascript:next()">
+<input id="nextbutton" type="submit" value="" class="playercontroler next">
+</form>
+
+<form name="buttonpreviousform" onsubmit="javascript:previous()">
+<input id="previousbutton" type="submit" value="" class="playercontroler previous">
+</form>
+
 <div id="songtitle" class="textstyle songtitle"></div>
-<pre><code>
+<p>
 <form name="playerform" onsubmit="javascript:play()">
-<input id="playerButton" type="submit" value="">
+<input id="playerbutton" type="submit" value="">
 </form>
 
 <script type="text/javascript">
 run()
 </script>
-
 
 </body>
 </html>
