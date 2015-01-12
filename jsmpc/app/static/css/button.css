@@ -15,6 +15,7 @@
     background: url(../img/player2.png);
     background-size: 1774px auto;
     position: relative;
+    float: center;
     }
 
 .playercontroler.arrow {
@@ -34,10 +35,10 @@
     width: 150px;
     height: 150px;
     background: url(../img/arrow-next.png);
-    margin-left: auto;
     position: relative;
-    margin-right: auto;
     margin-top:  auto;
+    float: right;
+    vertical-align: middle;
 }
 .playercontroler.previous
 {
@@ -47,9 +48,8 @@
     background: url(../img/arrow-next.png);
     transform: scale(-1, 1);
     position: relative;
-    margin-left: auto;
-    margin-top:  auto;
-    margin-right: auto
+    float: left;
+    vertical-align: middle;
 }
 .arrow.next
 {
