@@ -11,6 +11,18 @@ function post(endpoint,data)
     });
 }
 
+function put(endpoint,data)
+{
+    var request;
+    request = $.ajax({
+        url:  endpoint,
+        type: "PUT",
+        data: data,
+        error: errorHandler,
+        async:   false
+    });
+}
+
 function get(endpoint)
 {
     var request;

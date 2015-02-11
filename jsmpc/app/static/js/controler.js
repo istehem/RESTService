@@ -1,10 +1,6 @@
 function postSuccessHandler(data)
 {
-    var command = "" + Object.keys(data);
-    switch(command)
-    {
-        case "state" : handlesetplayerbutton(data); break;
-    }
+    ;
 }
 
 function getSuccessHandler(data)
@@ -26,18 +22,18 @@ function errorHandler(jqXHR, textStatus, errorThrown)
 
 function play()
 {
-    var data = "command=" + invertstate(statedata.state);
-    post("/api/v1/player",data);
+    var data = "state=" + invertstate(statedata.state);
+    put("/api/v1/player",data);
 }
 
 function next()
 {
-    post("/api/v1/next","");
+    put("/api/v1/next","");
 }
 
 function previous()
 {
-    post("/api/v1/previous","");
+    put("/api/v1/previous","");
 }
 
 function setcurrentsong()

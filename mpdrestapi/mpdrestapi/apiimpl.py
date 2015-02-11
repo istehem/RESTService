@@ -33,26 +33,25 @@ class PlaylistSong(restful.Resource):
         return {'song' : client.getplaylistsong(songid)}
 
 class Next(restful.Resource):
-    def post(self):
-        return {'song' : client.next()}
+    def put(self):
+        client.next()
 
 class Previous(restful.Resource):
-    def post(self):
-        return {'song' : client.previous()}
+    def put(self):
+        client.previous()
 
 class Player(restful.Resource):
-    def post(self):
-        def playercommand(command):
-            if command not in ['play','stop','pause']:
+    def put(self):
+        def playercommand(state):
+            if state not in ['play','stop','pause']:
                 abort(400)
-            return command
+            return state
         post_parser = reqparse.RequestParser()
         post_parser.add_argument(
-                    'command', dest='command',
+                    'state', dest='state',
                      type=playercommand, required=True, location='values'
                      )
         args = post_parser.parse_args()
-        client.player(args.command)
-        return {'state' : args.command}
+        client.player(args.state)
     def get(self):
-        return {'state' :client.getplayerstatus()}
+        return {'state' : client.getplayerstatus()}
