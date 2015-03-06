@@ -18,7 +18,7 @@ class Client:
 
     def getplaylist(self):
         xs = []
-        for (id , file) in enumerate(self.client.playlist()):
+        for (id , file) in enumerate(self.client.playlistid()):
             xs.append({'file' : file, 'id' : id})
         return xs
 

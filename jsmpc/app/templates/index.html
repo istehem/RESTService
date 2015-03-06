@@ -1,6 +1,7 @@
 <html>
 <link rel="stylesheet" href="/static/css/button.css">
 <link rel="stylesheet" href="/static/css/songinfo.css">
+<link rel="stylesheet" href="/static/css/playlist.css">
 
 <script src="/static/js/jquery-2.1.1.js"></script>
 <script src="/static/js/player.js"></script>
@@ -8,6 +9,8 @@
 <script src="/static/js/controler.js"></script>
 <script src="/static/js/globals.js"></script>
 <script src="/static/js/httpmethods.js"></script>
+<script src="/static/js/playlist.js"></script>
+<script src="/static/js/playlistviewer.js"></script>
 <script src="/static/js/run.js"></script>
 
 <body>
@@ -23,6 +26,15 @@
 <p>
 <form name="playerform" onsubmit="javascript:play()">
 <input id="playerbutton" type="submit" value="">
+</form>
+
+
+
+<ul id="scroller">
+</ul>
+
+<form name="scrollbuttonform" onsubmit="javascript:scrolldown()">
+<input id="scrolldownbutton" type="submit" value="scroll">
 </form>
 
 <script type="text/javascript">

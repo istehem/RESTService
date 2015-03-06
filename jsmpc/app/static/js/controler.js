@@ -11,6 +11,7 @@ function getSuccessHandler(data)
     {
         case "current_song" : handlesetcurrentsong(data); break;
         case "state"        : handlesetplayerbutton(data); break;
+        case "playlist"     : handlesetplaylist(data); break;
     }
 }
 
@@ -24,6 +25,11 @@ function play()
 {
     var data = "state=" + invertstate(statedata.state);
     put("/api/v1/player",data);
+}
+
+function scrolldown()
+{
+    handlescrolldown("scroller")
 }
 
 function next()
@@ -44,3 +50,9 @@ function setplayerbutton()
 {
     get("/api/v1/player");
 }
+
+function setplaylist()
+{
+    get("/api/v1/playlist");
+}
+
