@@ -31,9 +31,17 @@ class Client:
         else:
             getattr(self.client, option)()
 
+    def playid(self,songid):
+        try:
+            self.client.playlistid(songid)
+        except:
+            return False
+        self.client.playid(songid)
+        return True
+
+
     def getplayerstatus(self):
         return self.client.status()["state"]
-
 
     def previous(self):
         self.client.previous()

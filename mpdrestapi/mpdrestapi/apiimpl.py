@@ -32,6 +32,12 @@ class PlaylistSong(restful.Resource):
     def get(self,songid):
         return {'song' : client.getplaylistsong(songid)}
 
+    def put(self,songid):
+        if client.playid(songid):
+            pass
+        else:
+            abort(404)
+
 class Next(restful.Resource):
     def put(self):
         client.next()

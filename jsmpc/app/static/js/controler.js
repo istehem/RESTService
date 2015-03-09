@@ -53,6 +53,10 @@ function setplayerbutton()
 
 function setplaylist()
 {
-    get("/api/v1/playlist");
+    get("/api/v1/playlist/");
 }
 
+function onPlaylistSongClicked(id)
+{
+    put("/api/v1/playlist/" + id);
+}

@@ -1,5 +1,4 @@
-
-function addsongs(id, songs)
+function addsongs(id, songs, callback)
 {
     var el = $('#' + id);
     el.css({
@@ -7,10 +6,24 @@ function addsongs(id, songs)
     });
 
     var len = songs.length;
-    for (var i = 0; i < len && i < 10; i++)
+    for (var i = 0; i < len; i++)
     {
-        el.append('<li>' + songs[i].file.id + " : " + songs[i].file.title + '</li>');
+        var songid = songs[i].file.id;
+        el.append('<li class="' +  songid + '">' + songs[i].file.title + '</li>');
+        var item = $('li').eq(i);
+
+        item.click(
+            function()
+            {
+                callback($(this).attr("class"));
+            })
     }
+}
+
+function markPlayingSong(id, songid)
+{
+    var songItem = $('#' + id).find('.' + songid);
+    songItem.css('background', 'blue');
 }
 
 
