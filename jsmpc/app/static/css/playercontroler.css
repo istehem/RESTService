@@ -1,0 +1,39 @@
+.playercontroler
+{
+    position: relative;
+    margin: 50px auto auto auto;
+}
+
+.playerbutton {
+    border: 0px;
+    width: 500px;
+    height: 500px;
+    background: url(../img/player2.png);
+    background-size: 1774px auto;
+    position: relative;
+    margin: 0px auto auto auto ;
+    }
+
+.arrow {
+    position: relative;
+    border: 0px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/arrow-next.png);
+}
+
+.arrow.next
+{
+    float: right;
+}
+
+.arrow.previous
+{
+    transform: scale(-1, 1);
+    float: left;
+}
+
+.playerbutton.pause{}
+.playerbutton.play{background-position: 50% 0%}
+.playerbutton.stop{background-position: 100% 0%}
+
