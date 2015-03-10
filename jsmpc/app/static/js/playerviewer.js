@@ -25,7 +25,9 @@ function handlepressingplayerbutton(data)
     el.off("click");
     changePlayerImage(id, data.state);
     el.click(function() {
+        el.fadeTo(400,0.7);
         onPlayButtonClicked(data.state);
+        el.fadeTo(400,1);
     });
 }
 
@@ -62,6 +64,8 @@ function setArrow(id, arrowClass, callback)
     var el = $('#' + id);
     el.addClass(arrowClass);
     el.click(function() {
+            el.fadeTo(400, 0.7);
+            el.fadeTo(400, 1);
             callback();
             triggerEventsHandler(id)
     });
