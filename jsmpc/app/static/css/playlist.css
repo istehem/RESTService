@@ -2,7 +2,7 @@
     border: 1px solid #9DB029; margin: 1em 0; }
 
 #scroller li { border: 1px solid #ddd; width: auto;
-    margin: auto; padding: 0.5em; background-color: #eee; }
+    margin: auto; padding: 0.5em; background-color: #eee; font-size: 1em; }
 
 #scroller li:hover
 {

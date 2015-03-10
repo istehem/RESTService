@@ -1,7 +1,7 @@
 function run()
 {
-    setcurrentsong()
     setplayerbutton()
+    setcurrentsong()
     setplaylist()
     runupdate();
 }
@@ -14,8 +14,8 @@ function runupdate()
 
 function update()
 {
-    setcurrentsong()
     setplayerbutton()
+    setcurrentsong()
     runupdate()
 }
 

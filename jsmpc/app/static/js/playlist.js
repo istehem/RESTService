@@ -20,12 +20,19 @@ function addsongs(id, songs, callback)
     }
 }
 
-function markPlayingSong(id, songid)
+function markSong(id, songid)
 {
     var songItem = $('#' + id).find('.' + songid);
-    songItem.css('background', 'blue');
+    songItem.css('color', '#0F9E5E');
+    songItem.animate({fontSize: '1.5em'}, 400);
 }
 
+function unmarkSong(id, songid)
+{
+    var songItem = $('#' + id).find('.' + songid);
+    songItem.css('color', 'black');
+    songItem.animate({fontSize: '1em'}, 400);
+}
 
 function smoothAdd(id, text)
 {
