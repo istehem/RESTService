@@ -12,6 +12,12 @@ function handlesetcurrentsong(data)
         }
     }
     songtitle.val(data.current_song.id);
+}
+
+function declareCurrentSongListenEvents()
+{
+    var songtitle = $('#songtitle');
+
     songtitle.on("playlistitemclicked", function() {
          setcurrentsong();
     });
@@ -19,4 +25,3 @@ function handlesetcurrentsong(data)
          setcurrentsong();
     });
 }
-

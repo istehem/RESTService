@@ -18,32 +18,44 @@ function getPlayerStatusButton(state)
 }
 
 
-function handlesetplayerbutton(data)
+function handlepressingplayerbutton(data)
 {
-     changePlayerImage("playerbutton", data.state, onPlayButtonClicked);
+    var id  = "playerbutton";
+    var el = $('#' + id);
+    el.off("click");
+    changePlayerImage(id, data.state);
+    el.click(function() {
+        onPlayButtonClicked(data.state);
+    });
 }
 
-function changePlayerImage(id, state, callback)
+function changePlayerImage(id, state)
 {
     var el = $('#' + id);
     el.removeClass();
     el.addClass(getPlayerStatusButton(state));
-    el.click(function() {
-            callback(state)
-    });
+}
+
+function declarePlayerButtonListenEvents()
+{
+    var el = $('#playerbutton');
+
     el.on("playlistitemclicked", function(){
-            if (state == "pause" || state == "stop")
-            {
-                callback(state);
-            }
+        changePlayerImage("playerbutton", "play");
+        el.click(function() {
+            onPlayButtonClicked("play");
+         });
     });
     el.on("arrowbuttonclicked", function(){
-            if (state == "pause" || state == "stop")
-            {
-                callback(state);
-            }
+        changePlayerImage("playerbutton", "play");
+        el.click(function() {
+            onPlayButtonClicked("play");
+         });
     });
 }
+
+/* Next and Previous Buttons */
+/******************************************************************************/
 
 function setArrow(id, arrowClass, callback)
 {

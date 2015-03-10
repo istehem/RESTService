@@ -10,7 +10,7 @@ function getSuccessHandler(data)
     switch(command)
     {
         case "current_song" : handlesetcurrentsong(data); break;
-        case "state"        : handlesetplayerbutton(data); break;
+        case "state"        : handlepressingplayerbutton(data); break;
         case "playlist"     : handlesetplaylist(data); break;
     }
 }
@@ -57,7 +57,7 @@ function onPlaylistSongClicked(id)
 function onPlayButtonClicked(state)
 {
     var data = "state=" + invertstate(state);
-    put("/api/v1/player",data);
+    put("/api/v1/player", data);
     setplayerbutton();
 }
 
@@ -69,4 +69,5 @@ function onNextButtonClicked()
 function onPreviousButtonClicked()
 {
     put("/api/v1/previous","");
+
 }

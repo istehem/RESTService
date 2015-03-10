@@ -1,10 +1,16 @@
 function run()
 {
     setplayerbutton();
+    declarePlayerButtonListenEvents();
+
     setplaylist();
+
     setcurrentsong();
-    setNextButton()
-    setPreviousButton()
+    declareCurrentSongListenEvents();
+
+    setNextButton();
+    setPreviousButton();
+
     ping();
 }
 
