@@ -1,21 +1,21 @@
 function run()
 {
-    setplayerbutton()
-    setcurrentsong()
-    setplaylist()
-    runupdate();
+    setplayerbutton();
+    setplaylist();
+    setcurrentsong();
+    setNextButton()
+    setPreviousButton()
+    ping();
 }
 
 
-function runupdate()
+function ping()
 {
-    setTimeout(update,500)
+
+    setTimeout(function(){
+        getstatus();
+        ping()
+    },1000);
 }
 
-function update()
-{
-    setplayerbutton()
-    setcurrentsong()
-    runupdate()
-}
 

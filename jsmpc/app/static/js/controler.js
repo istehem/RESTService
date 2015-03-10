@@ -20,18 +20,6 @@ function errorHandler(jqXHR, textStatus, errorThrown)
     alert(JSON.stringify(jqXHR) + ' ' + textStatus +'  '+errorThrown);
 }
 
-
-function play()
-{
-    var data = "state=" + invertstate(statedata.state);
-    put("/api/v1/player",data);
-}
-
-function scrolldown()
-{
-    handlescrolldown("scroller")
-}
-
 function next()
 {
     put("/api/v1/next","");
@@ -56,7 +44,29 @@ function setplaylist()
     get("/api/v1/playlist/");
 }
 
+function getstatus()
+{
+    get("/api/v1/status");
+}
+
 function onPlaylistSongClicked(id)
 {
     put("/api/v1/playlist/" + id);
+}
+
+function onPlayButtonClicked(state)
+{
+    var data = "state=" + invertstate(state);
+    put("/api/v1/player",data);
+    setplayerbutton();
+}
+
+function onNextButtonClicked()
+{
+    put("/api/v1/next","");
+}
+
+function onPreviousButtonClicked()
+{
+    put("/api/v1/previous","");
 }

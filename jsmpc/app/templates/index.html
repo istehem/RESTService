@@ -1,45 +1,42 @@
 <html>
-<link rel="stylesheet" href="/static/css/button.css">
+<link rel="stylesheet" href="/static/css/playercontroler.css">
 <link rel="stylesheet" href="/static/css/songinfo.css">
 <link rel="stylesheet" href="/static/css/playlist.css">
+<link rel="stylesheet" href="/static/css/jsmpc.css">
 
 <script src="/static/js/jquery-2.1.1.js"></script>
-<script src="/static/js/player.js"></script>
+<script src="/static/js/playerviewer.js"></script>
 <script src="/static/js/currentsonginfo.js"></script>
 <script src="/static/js/controler.js"></script>
 <script src="/static/js/globals.js"></script>
 <script src="/static/js/httpmethods.js"></script>
-<script src="/static/js/playlist.js"></script>
+<script src="/static/js/playlistviewerhelper.js"></script>
 <script src="/static/js/playlistviewer.js"></script>
+<script src="/static/js/eventhandler.js"></script>
 <script src="/static/js/run.js"></script>
 
 <body>
-<form name="buttonnextform" onsubmit="javascript:next()">
-<input id="nextbutton" type="submit" value="" class="playercontroler next">
-</form>
+<div class = "jsmpc">
 
-<form name="buttonpreviousform" onsubmit="javascript:previous()">
-<input id="previousbutton" type="submit" value="" class="playercontroler previous">
-</form>
-
-<div id="songtitle" class="textstyle songtitle" value = "-1"></div>
-<p>
-<form name="playerform" onsubmit="javascript:play()">
-<input id="playerbutton" type="submit" value="">
-</form>
+<div class = "songinfo">
+    <div id="songtitle" class="textstyle songtitle"></div>
+</div>
 
 
+<div class = "playercontroler">
+    <div id="nextbutton" type="button" value=""></div>
+    <div id="previousbutton" type="button" value=""></div>
+    <div id="playerbutton" type="button" value=""></div>
+</div>
 
-<ul id="scroller">
-</ul>
-
-<form name="scrollbuttonform" onsubmit="javascript:scrolldown()">
-<input id="scrolldownbutton" type="submit" value="scroll">
-</form>
+<div class="playlist">
+    <ul id="scroller"></ul>
+</div>
 
 <script type="text/javascript">
-run()
+    run()
 </script>
+</div>
 
 </body>
 </html>

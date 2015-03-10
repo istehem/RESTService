@@ -1,13 +1,22 @@
 function handlesetcurrentsong(data)
 {
-    var songtitle = document.getElementById("songtitle");
-    if (songtitle.value != data.current_song.id)
-    {
-        songtitle.innerHTML = data.current_song.title;
-        markSong("scroller", data.current_song.id);
-        unmarkSong("scroller", songtitle.value);
-    }
-    songtitle.value = data.current_song.id;
-}
+    var songtitle = $('#songtitle');
 
+    if (songtitle.val() != data.current_song.id)
+    {
+        songtitle.text(data.current_song.title);
+        markSong("scroller", data.current_song.id);
+        if(songtitle.val() != "")
+        {
+            unmarkSong("scroller", songtitle.val());
+        }
+    }
+    songtitle.val(data.current_song.id);
+    songtitle.on("playlistitemclicked", function() {
+         setcurrentsong();
+    });
+    songtitle.on("arrowbuttonclicked", function() {
+         setcurrentsong();
+    });
+}
 
