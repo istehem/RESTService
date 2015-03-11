@@ -8,16 +8,39 @@ function addsongs(id, songs, callback)
     var len = songs.length;
     for (var i = 0; i < len; i++)
     {
+        var oldItem = $('li').eq(i);
         var songid = songs[i].file.id;
-        el.append('<li class="' +  songid + '">' + songs[i].file.title + '</li>');
-        var item = $('li').eq(i);
-
-        item.click(
-            function()
-            {
-                callback($(this).attr("class"));
+        if(oldItem.val() != songid)
+        {
+            var item = $('<li></li>');
+            item.addClass(songid);
+            item.val(songid);
+            item.text(songs[i].file.title);
+            item.click(
+                function()
+                {
+                callback($(this).val());
                 triggerEventsHandler(id);
-            })
+                });
+            if(!oldItem.val())
+            {
+                el.append(item);
+            }
+            else if(!(el.find('.' + songid)).val())
+            {
+                oldItem.replaceWith(item);
+            }
+            else
+            {
+                oldItem.remove();
+            }
+        }
+    }
+
+    var lastIndex = $('li:last',  el).index();
+    for (var i = 0; lastIndex - (len - 1 + i) > 0; i++)
+    {
+        $('li').eq(len + i).remove();
     }
 }
 

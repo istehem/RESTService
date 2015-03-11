@@ -71,3 +71,10 @@ function onPreviousButtonClicked()
     put("/api/v1/previous","");
 
 }
+
+function setPlayerUpdates()
+{
+    setplayerbutton();
+    setplaylist();
+    setcurrentsong();
+}
