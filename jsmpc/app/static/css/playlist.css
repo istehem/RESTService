@@ -1,18 +1,18 @@
 .playlist
 {
-    position: relative; float: button;
+    position: relative;
+    margin: 50px 10px auto 10px;
 }
-
 #scroller
 {
     list-style: none; padding: 1em;
-    border: 1px solid #9DB029; margin-top : 100px;
+    border: 1px solid #9DB029;
 }
 
 #scroller li
 {
     border: 1px solid #ddd; width: auto;
-    margin: auto; padding: 0.5em; background-color: #eee; font-size: 1em;
+    padding: 0.5em; background-color: #eee; font-size: 1em;
 }
 
 #scroller li:hover
