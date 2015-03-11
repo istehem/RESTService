@@ -5,6 +5,9 @@ function handlesetcurrentsong(data)
     if (songtitle.val() != data.current_song.id)
     {
         songtitle.text(data.current_song.title);
+        $('#artist').text(data.current_song.artist);
+        $('#album').text(data.current_song.album);
+
         markSong("scroller", data.current_song.id);
         if(songtitle.val() != "")
         {
