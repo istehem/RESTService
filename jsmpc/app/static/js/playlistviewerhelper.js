@@ -47,14 +47,20 @@ function addsongs(id, songs, callback)
 function markSong(id, songid)
 {
     var songItem = $('#' + id).find('.' + songid);
-    songItem.css('color', '#0F9E5E');
-    songItem.animate({fontSize: '1.5em'}, 400);
+    if(songItem)
+    {
+        songItem.css('color', '#0F9E5E');
+        songItem.animate({fontSize: '1.5em'}, 400);
+    }
 }
 
 function unmarkSong(id, songid)
 {
     var songItem = $('#' + id).find('.' + songid);
-    songItem.removeAttr('style');
+    if(songItem)
+    {
+        songItem.removeAttr('style');
+    }
 }
 
 function smoothAdd(id, text)
