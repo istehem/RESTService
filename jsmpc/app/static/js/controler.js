@@ -12,6 +12,7 @@ function getSuccessHandler(data)
         case "current_song" : handlesetcurrentsong(data); break;
         case "state"        : handlepressingplayerbutton(data); break;
         case "playlist"     : handlesetplaylist(data); break;
+        case "status"       : handleSetPlayerOptionButtons(data); break;
     }
 }
 
@@ -77,4 +78,5 @@ function setPlayerUpdates()
     setplayerbutton();
     setplaylist();
     setcurrentsong();
+    getstatus();
 }

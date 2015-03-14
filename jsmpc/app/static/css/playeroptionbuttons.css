@@ -1,0 +1,39 @@
+.playeroptionbuttons
+{
+    margin: 50px auto auto auto;
+    height: 128px;
+    width: 270px;
+    position: relative;
+}
+
+.shufflebutton
+{
+    border: 1px solid black;
+    width: 128px;
+    height: 128px;
+    background: url(../img/media-shuffle.png);
+    background-size: 128px auto;
+    float: left;
+}
+
+.shufflebutton:hover
+{
+    border: 2px solid #9DB029;
+}
+
+
+.repeatbutton
+{
+    border: 1px solid black;
+    float: right;
+    width: 128px;
+    height: 128px;
+    background: url(../img/media-repeat.png);
+    background-size: 128px auto;
+}
+
+.repeatbutton:hover
+{
+    border: 2px solid #9DB029;
+}
+
