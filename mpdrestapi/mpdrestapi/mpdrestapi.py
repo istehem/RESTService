@@ -18,3 +18,5 @@ class MpdRestApi(restful.Api):
         self.add_resource(Player, basepath + 'player')
         self.add_resource(Next, basepath + 'next')
         self.add_resource(Previous, basepath + 'previous')
+        self.add_resource(Random, basepath + 'random')
+        self.add_resource(Repeat, basepath + 'repeat')

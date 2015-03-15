@@ -12,6 +12,7 @@ function run()
     setPreviousButton();
 
     getstatus();
+    declarePlayerOptionButtons();
 
     setInterval(function(){setPlayerUpdates()}, 2000);
 }

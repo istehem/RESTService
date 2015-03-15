@@ -14,11 +14,9 @@ class Status(restful.Resource):
     def get(self):
         return {'status': client.getstatus()}
 
-
 class Version(restful.Resource):
     def get(self):
         return {'mpd_version': client.version()}
-
 
 class Currentsong(restful.Resource):
     def get(self):
@@ -61,3 +59,29 @@ class Player(restful.Resource):
         client.player(args.state)
     def get(self):
         return {'state' : client.getplayerstatus()}
+
+class Random(restful.Resource):
+    def put(self):
+        put_parser = reqparse.RequestParser()
+        put_parser.add_argument(
+                    'active', dest='active',
+                     type=int, required=True,
+                     help="body parameter must specify a boolean value [0,1]",
+                     location='values')
+        args = put_parser.parse_args()
+        if not args.active in [0, 1]:
+            abort(400)
+        client.random(args.active)
+
+class Repeat(restful.Resource):
+    def put(self):
+        put_parser = reqparse.RequestParser()
+        put_parser.add_argument(
+                    'active', dest='active',
+                     type=int, required=True,
+                     help="body parameter must specify a boolean value [0,1]",
+                     location='values')
+        args = put_parser.parse_args()
+        if not args.active in [0, 1]:
+            abort(400)
+        client.repeat(args.active)

@@ -39,7 +39,6 @@ class Client:
         self.client.playid(songid)
         return True
 
-
     def getplayerstatus(self):
         return self.client.status()["state"]
 
@@ -50,3 +49,9 @@ class Client:
     def next(self):
         self.client.next()
         return self.getcurrentsong()
+
+    def random(self, active):
+        return self.client.random(active)
+
+    def repeat(self, active):
+        return self.client.repeat(active)

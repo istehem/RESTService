@@ -70,7 +70,16 @@ function onNextButtonClicked()
 function onPreviousButtonClicked()
 {
     put("/api/v1/previous","");
+}
 
+function onRandomButtonClicked(state)
+{
+    put("/api/v1/random",state);
+}
+
+function onRepeatButtonClicked(state)
+{
+    put("/api/v1/repeat",state);
 }
 
 function setPlayerUpdates()
