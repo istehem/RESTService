@@ -31,6 +31,6 @@ function get(endpoint)
         type: "GET",
         success: getSuccessHandler,
         error: errorHandler,
-        async:   false
+        async:   true
     });
 }
