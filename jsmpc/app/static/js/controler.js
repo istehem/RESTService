@@ -57,7 +57,7 @@ function onPlaylistSongClicked(id)
 
 function onPlayButtonClicked(state)
 {
-    var data = "state=" + invertstate(state);
+    var data = JSON.stringify({state : invertstate(state)});
     put("/api/v1/player", data);
     setplayerbutton();
 }
@@ -74,12 +74,14 @@ function onPreviousButtonClicked()
 
 function onRandomButtonClicked(state)
 {
-    put("/api/v1/random",state);
+    var data = JSON.stringify({active : state});
+    put("/api/v1/random", data);
 }
 
 function onRepeatButtonClicked(state)
 {
-    put("/api/v1/repeat",state);
+    var data = JSON.stringify({active : state});
+    put("/api/v1/repeat", data);
 }
 
 function setPlayerUpdates()

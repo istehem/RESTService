@@ -4,6 +4,7 @@ function post(endpoint,data)
     request = $.ajax({
         url:  endpoint,
         type: "POST",
+        contentType: "application/json",
         data: data,
         success: postSuccessHandler,
         error: errorHandler,
@@ -17,6 +18,7 @@ function put(endpoint,data)
     request = $.ajax({
         url:  endpoint,
         type: "PUT",
+        contentType: "application/json",
         data: data,
         error: errorHandler,
         async:   false

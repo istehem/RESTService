@@ -26,7 +26,7 @@ function changePlayerOptionButtonState(id, callback)
     el.click(function() {
        var newVal = (1 + parseInt(el.val(),10)) % 2;
        setPlayeroOtionButton(id, newVal);
-       callback("active=" + newVal);
+       callback(newVal);
     });
 }
 

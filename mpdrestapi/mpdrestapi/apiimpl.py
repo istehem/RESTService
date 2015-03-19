@@ -53,7 +53,7 @@ class Player(restful.Resource):
         post_parser = reqparse.RequestParser()
         post_parser.add_argument(
                     'state', dest='state',
-                     type=playercommand, required=True, location='values'
+                     type=playercommand, required=True, location='json'
                      )
         args = post_parser.parse_args()
         client.player(args.state)
@@ -67,7 +67,7 @@ class Random(restful.Resource):
                     'active', dest='active',
                      type=int, required=True,
                      help="body parameter must specify a boolean value [0,1]",
-                     location='values')
+                     location='json')
         args = put_parser.parse_args()
         if not args.active in [0, 1]:
             abort(400)
@@ -80,7 +80,7 @@ class Repeat(restful.Resource):
                     'active', dest='active',
                      type=int, required=True,
                      help="body parameter must specify a boolean value [0,1]",
-                     location='values')
+                     location='json')
         args = put_parser.parse_args()
         if not args.active in [0, 1]:
             abort(400)
