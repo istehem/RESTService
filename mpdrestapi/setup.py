@@ -9,9 +9,9 @@ setup(
 
     author = 'Oskar Ingemarsson',
 
-    email = 'oskar.ingemarsson@gmail.com',
+    author_email = 'oskar.ingemarsson@gmail.com',
 
-    licence = 'BSD3',
+    license = 'BSD3',
 
     packages = find_packages(exclude=[]),
 
